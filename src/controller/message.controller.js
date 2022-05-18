@@ -4,8 +4,8 @@ const MessageSchema = require("../utils/models/message.model");
 const getMessages = (filter) => {
   return new Promise(async (resolve, reject) => {
     const fill = filter ? { user: filter } : {};
-    console.log(fill);
-    const allMessage = MessageSchema.find(fill);
+    const allMessage = await MessageSchema.find(fill).populate("user")
+    console.log(allMessage);
     resolve(allMessage);
   });
 };
