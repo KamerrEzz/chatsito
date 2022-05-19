@@ -6,6 +6,7 @@ const path = require("path");
 const indexRoutes = require("./routes/index.routes");
 const messageRoutes = require("./routes/message.routes");
 const userRoutes = require("./routes/user.routes");
+const chatRoutes = require("./routes/chat.routes");
 
 // Middleware Import
 const bodyparser = require("body-parser");
@@ -19,6 +20,7 @@ module.exports = (port) => {
   app.use("/", indexRoutes);
   app.use("/message", messageRoutes);
   app.use("/user", userRoutes);
+  app.use("/chat", chatRoutes);
 
   app.use(ErrorHander.logErrors);
   app.use(ErrorHander.boomError);

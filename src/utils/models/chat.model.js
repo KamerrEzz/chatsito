@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const ChatSchema = new Schema({
-  user: [{
-    type: Schema.Types.ObjectId,
+  users: [{
+    type: Schema.ObjectId,
     ref: "User"
   }]
 });
